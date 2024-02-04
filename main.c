@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 	int line_number = 0;
 	stack_t *stack = NULL;
 	size_t line_read = 0;
-	ssize_t read_line = 1;
 
 	if (argc != 2)
 	{
@@ -28,12 +27,11 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (read_line > 0)
+	while (fgets(line, line_read, fp) != NULL)
 	{
-		read_line = getline(&line, &line_read, fp);
 		line_number++;
 		var.line = line;
-		if (read_line > 0)
+		if (line[0] != '\0' && line[0] != '\n')
 		{
 			execute(&stack, line_number, fp);
 		}
