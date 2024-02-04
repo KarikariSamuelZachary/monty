@@ -1,4 +1,4 @@
-nclude "monty.h"
+#include "monty.h"
 /**
  * execute - calls the command to be excuted
  * @stack: head of the stack
