@@ -1,13 +1,10 @@
 #include "monty.h"
-
 /**
- * _nop - does nothing
+ * nop - does nothing
+ * @stack: pointer to top of struct
+ * @line_number: line number
  *
- * @doubly: head of the linked list
- * @cline: line number
  */
-void _nop(stack_t **doubly, unsigned int cline)
+void nop(__attribute__((unused))stack_t **stack,__attribute__((unused)) unsigned int line_number)
 {
-	(void)doubly;
-	(void)cline;
 }
